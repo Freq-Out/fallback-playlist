@@ -11,5 +11,5 @@ This script is created in "/usr/lib/airtime/pypo/bin/liquidsoap_scripts", now ev
 
 ## ls_script.liq
 
-This is a snippet of "/usr/lib/airtime/pypo/bin/liquidsoap_scripts/ls_script.liq", where you can find the modification to include the jukebox.liq script.
+This is a snippet of "/usr/lib/airtime/pypo/bin/liquidsoap_scripts/ls_script.liq", where you can find how to include the jukebox.liq script.
 
