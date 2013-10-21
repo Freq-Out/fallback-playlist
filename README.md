@@ -1,6 +1,6 @@
 # Fallback Playlist
 
-Attempt to create an Airtime fallback playlist, to easily managing a radio stream, with station ID and OTH (oOn Top Hour) jingles.
+Attempt to create an Airtime fallback playlist, to easily managing a radio stream, with station ID and OTH (On Top Hour) jingles.
 
 This is a test, NOT meant for production use.
 
