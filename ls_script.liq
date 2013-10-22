@@ -8,6 +8,6 @@ if !ref_off_air_meta == "" then
 end
 # default = rewrite_metadata([("title", !ref_off_air_meta)], default)
 
-default = fallback(track_sensitive = false,[clock,atpointofchange])
+default = atpointofchange
 
  ignore(output.dummy(default, fallible=true))

@@ -1,56 +1,48 @@
 # Build some Playlists
 
 
-music = playlist(mode="randomize", reload=300,"/srv/airtime/stor/imported")
+earlybirds = playlist(mode="randomize", reload=300,"/srv/airtime/stor/earlybirds")
+
+smartphaune = playlist(mode="randomize", reload=300,"/srv/airtime/stor/smartphaune")
+
+nightowls = playlist(mode="randomize", reload=300, "/srv/airtime/stor/nightowls")
 
 jingles = playlist(mode="randomize", reload=3600,"/srv/airtime/stor/jingles")
 
 clock = single("/srv/airtime/stor/clock/timematic.mp3")
 
 
-# Security
+# Security: make playlist infallible
 
 
-m = mksafe(music)
+e = mksafe(earlybirds)
+s = mksafe(smartphaune)
+n = mksafe(nightowls)
 j = mksafe(jingles)
+c = mksafe(clock)
 
 
+#Define playlists rotation 
+
+m = fallback([ switch([({ 7h-10h }, e),
+                       ({ 10h-23h30 }, s),
+                       ({ 23h30-7h }, n)
+                     ])
+            ])
 
 # Add schedule events
 
-
-clock=
-         add([
-              switch([
-
-                        ({1h0m0s}, clock),
-                        ({2h0m0s}, clock),
-                        ({3h0m0s}, clock),
-                        ({4h0m0s}, clock),
-                        ({5h0m0s}, clock),
-                        ({6h0m0s}, clock),
-                        ({7h0m0s}, clock),
-                        ({8h0m0s}, clock),
-                        ({9h0m0s}, clock),
-                        ({10h0m0s}, clock),
-                        ({11h0m0s}, clock),
-                        ({12h0m0s}, clock),
-                        ({13h0m0s}, clock),
-                        ({14h0m0s}, clock),
-                        ({15h0m0s}, clock),
-                        ({16h0m0s}, clock),
-                        ({17h0m0s}, clock),
-                        ({18h0m0s}, clock),
-                        ({19h0m0s}, clock),
-                        ({20h0m0s}, clock),
-                        ({21h0m0s}, clock),
-                        ({22h0m0s}, clock),
-                        ({23h0m0s}, clock),
-                      ])
-             ])
-
+   ## Nothing to schedule :)
 
 # Let' s play the music
 
+   ## Add static jingles rotation:
 
  atpointofchange = rotate (weights = [1,4],[j, m])
+
+   ## Add OTH jingles mixed over the current track:
+
+ atpointofchange = add([atpointofchange, switch([({0m0s},c)])])
+~                                                                                                                                    
+                                                                                                                                     
+"jukebox.liq" 45L, 1039C                                                                                           1,3           All
