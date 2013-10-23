@@ -1,15 +1,15 @@
 # Build some Playlists
 
 
-earlybirds = playlist(mode="randomize", reload=300,"/srv/airtime/stor/earlybirds")
+earlybirds = playlist(mode="randomize", reload=300,"/srv/airtime/stor/fallback/earlybirds")
 
-smartphaune = playlist(mode="randomize", reload=300,"/srv/airtime/stor/smartphaune")
+smartphaune = playlist(mode="randomize", reload=300,"/srv/airtime/stor/fallback/smartphaune")
 
-nightowls = playlist(mode="randomize", reload=300, "/srv/airtime/stor/nightowls")
+nightowls = playlist(mode="randomize", reload=300, "/srv/airtime/stor/fallback/nightowls")
 
-jingles = playlist(mode="randomize", reload=3600,"/srv/airtime/stor/jingles")
+jingles = playlist(mode="randomize", reload=3600,"/srv/airtime/stor/fallback/jingles")
 
-clock = single("/srv/airtime/stor/clock/timematic.mp3")
+clock = single("/srv/airtime/stor/clock/fallback/timematic.mp3")
 
 
 # Security: make playlist infallible
