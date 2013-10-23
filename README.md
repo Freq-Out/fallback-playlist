@@ -14,8 +14,8 @@ See the [Read Me](https://github.com/Freq-Out/airtime-appliance/blob/master/READ
 
 ## jukebox.liq
 
-This script is created in "/usr/lib/airtime/pypo/bin/liquidsoap_scripts", now even Airtime updates are easier to mantain.
-
+This script is created in "/usr/lib/airtime/pypo/bin/liquidsoap_scripts/library", now even Airtime updates are easier to mantain.
+Don' t forget to include this script in "/usr/lib/airtime/pypo/bin/liquidsoap_scripts/library/pervasives.liq".
 
 ## ls_script.liq
 
